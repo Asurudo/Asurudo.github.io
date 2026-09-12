@@ -1,75 +1,112 @@
-/* ---------- 基础 ---------- */
+/* ==========================================================
+   Asurudo — 学术主页骨架 × asurudo.top 视觉语言
+   强调色 #39c5bb / 衬线标题 / 居中 hero
+   ========================================================== */
 :root{
-  --fg:#222; --muted:#666; --line:#e3e3e3;
-  --link:#1a5fb4; --nav:#222; --navfg:#fff;
-  --ph:#eceff3; --phfg:#b0b7c0;
+  --accent:#39c5bb;          /* 签名色 */
+  --accent-dk:#2aa79e;
+  --fg:#333;
+  --muted:#767676;
+  --line:#e7e7e7;
+  --ph:#f0f3f4;
+  --phfg:#b6bfc2;
+  --serif:"Times New Roman",Georgia,"Songti SC","SimSun",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Roboto,sans-serif;
 }
 *{box-sizing:border-box}
 body{
   margin:0; color:var(--fg); background:#fff;
-  font-family:"Helvetica Neue",Helvetica,Arial,"PingFang SC","Microsoft YaHei",sans-serif;
-  font-size:15px; line-height:1.6; -webkit-font-smoothing:antialiased;
+  font-family:var(--sans); font-size:15px; line-height:1.7;
+  -webkit-font-smoothing:antialiased;
 }
-a{color:var(--link);text-decoration:none}
-a:hover{text-decoration:underline}
+a{color:var(--accent-dk);text-decoration:none}
+a:hover{color:var(--accent);text-decoration:underline}
 
-/* ---------- 顶部导航 ---------- */
-#mainnav{background:var(--nav);padding:14px 0;margin-bottom:34px}
-#mainnav .container{display:flex;align-items:center}
-#mainnav a{color:var(--navfg);font-size:19px;font-weight:500}
-#mainnav a:hover{text-decoration:none;opacity:.75}
+/* 顶部强调条 */
+#topbar{height:4px;background:var(--accent)}
 
-.container{max-width:1040px;margin:0 auto;padding:0 20px}
+.container{max-width:1000px;margin:0 auto;padding:0 22px}
+
+/* ---------- Hero ---------- */
+#hero{text-align:center;padding:46px 0 30px}
+#hero h1{
+  font-family:var(--serif); font-size:40px; font-weight:600;
+  margin:0 0 10px; letter-spacing:.5px; color:#2b2b2b;
+}
+#hero h1 .p{color:var(--accent)}          /* の 之类的连接字符 */
+#hero .tagline{font-size:15px;color:var(--muted);margin:0 0 18px}
+#hero .rule{width:60px;height:4px;background:var(--accent);margin:0 auto;border-radius:2px}
 
 /* ---------- 栅格 ---------- */
-.row{display:flex;flex-wrap:wrap;gap:36px}
-.sidebar{flex:0 0 260px}
+.row{display:flex;flex-wrap:wrap;gap:40px;padding-top:34px}
+.sidebar{flex:0 0 240px}
 .maincontent{flex:1;min-width:0}
 
 /* ---------- 侧边栏 ---------- */
 .sidebaritem{margin-bottom:26px}
 .sidebarheader{
-  font-weight:700;font-size:15px;margin-bottom:7px;
-  padding-bottom:5px;border-bottom:1px solid var(--line);
+  font-family:var(--serif); font-size:17px; font-weight:600; color:#2b2b2b;
+  margin-bottom:8px; padding-bottom:6px;
+  border-bottom:2px solid var(--accent);
 }
 .sidebaritem div{font-size:14px;color:var(--muted)}
-.sidebaritem a{font-size:14px}
-#headshot img{width:100%;border-radius:3px;display:block}
+#headshot img{width:100%;border-radius:4px;display:block}
 .photo-placeholder{
-  width:100%;aspect-ratio:1/1.1;background:var(--ph);border-radius:3px;
+  width:100%;aspect-ratio:1/1.1;background:var(--ph);border-radius:4px;
   display:flex;align-items:center;justify-content:center;
-  color:var(--phfg);font-size:13px;letter-spacing:.5px;
+  color:var(--phfg);font-size:13px;letter-spacing:1px;
 }
 
 /* ---------- 主体 ---------- */
-.mainitem{margin-bottom:40px}
+.mainitem{margin-bottom:42px}
 .mainheader{
-  font-size:23px;font-weight:600;margin-bottom:16px;
-  padding-bottom:7px;border-bottom:1px solid var(--line);
+  font-family:var(--serif); font-size:26px; font-weight:600; color:#2b2b2b;
+  margin-bottom:16px; padding-bottom:8px;
+  border-bottom:1px solid var(--line); position:relative;
 }
-.mainitem p{margin:0;color:#333}
+.mainheader::after{            /* 标题下的短强调线 */
+  content:""; position:absolute; left:0; bottom:-1px;
+  width:52px; height:3px; background:var(--accent);
+}
+.mainitem p{margin:0}
 
-/* ---------- 论文 / 项目条目 ---------- */
+/* ---------- 论文 / 项目 ---------- */
 .pub,.project{display:flex;gap:20px;margin-bottom:26px;align-items:flex-start}
-.pubimagesection,.projimagesection{flex:0 0 190px}
-.pubimagesection img,.projimagesection img{width:100%;border-radius:3px;display:block}
+.pubimagesection,.projimagesection{flex:0 0 180px}
+.pubimagesection img,.projimagesection img{width:100%;border-radius:4px;display:block}
 .thumb-placeholder{
-  width:100%;aspect-ratio:16/10;background:var(--ph);border-radius:3px;
+  width:100%;aspect-ratio:16/10;background:var(--ph);border-radius:4px;
   display:flex;align-items:center;justify-content:center;
   color:var(--phfg);font-size:12px;
 }
 .pubtextsection,.projtextsection{flex:1;min-width:0}
-.pubtitle,.projtitle{font-weight:600;font-size:16px;margin-bottom:3px}
-.pubauthors{font-size:14px;color:#444;margin-bottom:3px}
+.pubtitle,.projtitle{
+  font-family:var(--serif); font-weight:600; font-size:18px;
+  color:#2b2b2b; margin-bottom:4px;
+}
+.pubauthors{font-size:14px;color:#444}
 .pubvenue{font-size:14px;color:var(--muted);font-style:italic}
 .projintro{font-size:14px;color:#444}
-.tbd{color:#aaa;font-style:italic}
+.tbd{color:#b5b5b5;font-style:italic}
+
+/* ---------- 页脚 ---------- */
+footer{
+  margin-top:50px; border-top:4px solid var(--line);
+  padding:26px 0 40px; text-align:center; font-size:14px; color:var(--muted);
+}
+footer .fheader{
+  font-family:var(--serif); font-size:16px; font-weight:600;
+  color:#2b2b2b; margin-bottom:6px;
+}
+footer .copyright{margin-top:14px;font-size:13px;color:#9a9a9a}
 
 /* ---------- 移动端 ---------- */
 @media (max-width:800px){
-  .row{flex-direction:column;gap:26px}
+  #hero{padding:34px 0 22px}
+  #hero h1{font-size:31px}
+  .row{flex-direction:column;gap:28px;padding-top:26px}
   .sidebar{flex:none}
-  #headshot{max-width:230px}
+  #headshot{max-width:200px;margin:0 auto}
   .pub,.project{gap:14px}
-  .pubimagesection,.projimagesection{flex:0 0 120px}
+  .pubimagesection,.projimagesection{flex:0 0 110px}
 }
