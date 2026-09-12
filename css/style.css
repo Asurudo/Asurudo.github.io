@@ -223,3 +223,6 @@ body{position:relative}
 }
 /* ruby 的注音要占上方空间，给标题留出行高 */
 html[data-lang="ja"] #hero h1{line-height:1.5;margin-top:-6px}
+
+/* 日文姓名：姓与名之间留出间隔 */
+#hero h1 ruby + ruby{margin-left:.34em}
