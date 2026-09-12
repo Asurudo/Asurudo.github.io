@@ -140,30 +140,67 @@ footer .copyright{margin-top:15px;font-size:13px;color:#9a9a9a}
   .pubimagesection,.projimagesection{flex:0 0 110px}
 }
 
-/* ---------- 语言切换 ---------- */
+
+/* ---------- 语言切换：滑动呼吸胶囊 ---------- */
 html[data-lang="zh"] [data-lang]:not([data-lang="zh"]),
 html[data-lang="en"] [data-lang]:not([data-lang="en"]),
 html[data-lang="ja"] [data-lang]:not([data-lang="ja"]){display:none !important}
 
 body{position:relative}
+
 #langswitch{
-  position:absolute; top:24px; right:24px; z-index:5;
-  display:flex;
-  border:1px solid var(--line); border-radius:6px; overflow:hidden;
-  background:#fff;
+  position:absolute; top:22px; right:24px; z-index:5;
+  display:flex; padding:3px;
+  border:1px solid var(--line); border-radius:999px; background:#fff;
+  box-shadow:0 1px 4px rgba(0,0,0,.05);
 }
+
+/* 滑块：与顶部条共用同一套呼吸色 */
+#langswitch .pill{
+  position:absolute; top:0; left:0; width:0; height:0;
+  border-radius:999px; background:var(--accent);
+  animation:blink-rainbow-bg 20s linear infinite;
+  pointer-events:none;
+}
+#langswitch.ready .pill{
+  transition:transform .42s cubic-bezier(.34,1.5,.5,1),
+             width .42s cubic-bezier(.34,1.5,.5,1);
+}
+
 #langswitch button{
-  font-family:var(--sans); font-size:12.5px; line-height:1;
-  padding:7px 11px; border:0; background:transparent;
-  color:var(--muted); cursor:pointer; white-space:nowrap;
-  transition:background .15s, color .15s;
+  position:relative; z-index:1;
+  width:36px; height:30px; padding:0; border:0; background:transparent;
+  cursor:pointer; color:var(--muted);
+  display:flex; align-items:center; justify-content:center;
+  transition:color .28s;
 }
-#langswitch button + button{border-left:1px solid var(--line)}
-#langswitch button:hover{color:var(--accent-dk);background:#f5fbfb}
-#langswitch button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+#langswitch button .g{
+  display:block; line-height:1;
+  transition:transform .28s cubic-bezier(.34,1.5,.5,1);
+}
+/* 每种语言用自己的字形：拉丁走衬线，中日走文楷 */
+#langswitch button[data-set="en"] .g{
+  font-family:var(--serif); font-size:18px; font-weight:500;
+  font-variation-settings:"opsz" 16;
+}
+#langswitch button[data-set="zh"] .g,
+#langswitch button[data-set="ja"] .g{
+  font-family:"LXGW WenKai",var(--sans); font-size:16px;
+}
+#langswitch button:hover{color:var(--fg)}
+#langswitch button:hover .g{transform:translateY(-1px) scale(1.12)}
+#langswitch button.on{color:#fff}
+#langswitch button.on .g{transform:none}
+#langswitch button:focus-visible{outline:2px solid var(--accent-dk);outline-offset:2px;border-radius:999px}
+
+@media (prefers-reduced-motion:reduce){
+  #langswitch .pill{animation:none}
+  #langswitch.ready .pill{transition:none}
+  #langswitch button .g{transition:none}
+}
 
 @media (max-width:800px){
-  #langswitch{top:18px;right:16px}
-  #langswitch button{font-size:11.5px;padding:6px 8px}
-  #hero{padding-top:56px}   /* 给切换器让出空间 */
+  #langswitch{top:16px;right:16px}
+  #langswitch button{width:32px;height:28px}
+  #hero{padding-top:58px}
 }

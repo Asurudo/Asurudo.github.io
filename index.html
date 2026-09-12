@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css" rel="stylesheet">
-<link href="/css/style.css?v=6" rel="stylesheet">
+<link href="/css/style.css?v=7" rel="stylesheet">
 </head>
 <body>
 
@@ -34,9 +34,10 @@
 
 <!-- ============ 语言切换 ============ -->
 <nav id="langswitch" aria-label="Language">
-  <button type="button" data-set="zh" lang="zh-CN">中文</button>
-  <button type="button" data-set="en" lang="en">EN</button>
-  <button type="button" data-set="ja" lang="ja">日本語</button>
+  <span class="pill" aria-hidden="true"></span>
+  <button type="button" data-set="zh" title="中文" aria-label="中文"><span class="g">中</span></button>
+  <button type="button" data-set="en" title="English" aria-label="English"><span class="g">A</span></button>
+  <button type="button" data-set="ja" title="日本語" aria-label="日本語"><span class="g">あ</span></button>
 </nav>
 
 <div class="container">
@@ -173,9 +174,20 @@
 </div>
 
 <script>
+<script>
 (function(){
   var nav=document.getElementById('langswitch');
+  var pill=nav.querySelector('.pill');
   var names={zh:'zh-CN', en:'en', ja:'ja'};
+
+  function movePill(){
+    var b=nav.querySelector('button.on');
+    if(!b) return;
+    pill.style.width  = b.offsetWidth+'px';
+    pill.style.height = b.offsetHeight+'px';
+    pill.style.transform = 'translate('+b.offsetLeft+'px,'+b.offsetTop+'px)';
+  }
+
   function apply(lang){
     var d=document.documentElement;
     d.setAttribute('data-lang', lang);
@@ -185,16 +197,25 @@
       b.classList.toggle('on', on);
       b.setAttribute('aria-current', on ? 'true' : 'false');
     });
+    movePill();
     try{ localStorage.setItem('lang', lang); }catch(e){}
     var u=new URL(location.href);
     u.searchParams.set('lang', lang);
     history.replaceState(null,'',u);
   }
+
   nav.addEventListener('click', function(e){
     var b=e.target.closest('button[data-set]');
     if(b) apply(b.dataset.set);
   });
+
   apply(document.documentElement.getAttribute('data-lang') || 'en');
+
+  // 首次定位完成后才开启过渡，避免滑块从左边飞进来
+  requestAnimationFrame(function(){ nav.classList.add('ready'); });
+  // 字体加载完字宽会变，重新量一次
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(movePill);
+  addEventListener('resize', movePill);
 })();
 </script>
 
