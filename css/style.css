@@ -24,7 +24,7 @@ a:hover{color:var(--accent);text-decoration:underline}
 
 /* 顶部呼吸条 —— 取自 asurudo.top */
 #topbar{
-  height:5px; background:var(--accent);
+  height:10px; background:var(--accent);
   animation:blink-rainbow-bg 20s linear infinite;
 }
 @keyframes blink-rainbow-bg{
