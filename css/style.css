@@ -5,6 +5,7 @@
 :root{
   --accent:#39c5bb;
   --accent-dk:#2aa79e;
+  --pink:#ff1688;          /* 呼吸动画 50% 处的峰值色 */
   --fg:#2f3338;
   --muted:#7a828a;
   --line:#e7e7e7;
@@ -238,16 +239,15 @@ html[data-lang="ja"] #hero h1{line-height:1.5;margin-top:-6px}
 
 .affil .role{
   font-family:var(--serif); font-size:14.5px; font-weight:500;
-  color:var(--accent-dk); margin-bottom:6px; letter-spacing:.01em;
+  color:var(--pink); margin-bottom:5px; letter-spacing:.01em;
   padding-left:0; text-indent:0;
 }
 
-/* 关键：条目内行距收紧、条目间距拉开，让邻近性正确表达归属
-   13.5 × 1.28 = 17.3px → 条目内行距 3.8px；条目间距 3.8 + 10 = 13.8px（约 3.6 倍）
-   再加悬挂缩进，换行的续行向右让 10px，一眼能认出是上一条的延续 */
+/* 条目间距收紧到 6px —— 归属的辨识主要交给悬挂缩进，
+   缩进承担了区分职责，间距就不必再撑那么开 */
 .affil div:not(.role){
   font-size:13.5px; line-height:1.28; color:var(--muted);
-  margin-bottom:10px;
+  margin-bottom:6px;
   padding-left:10px; text-indent:-10px;
 }
 .affil div:not(.role):last-child{margin-bottom:0}
