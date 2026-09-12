@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+  // 默认英文；?lang= 参数优先，其次记住上次的选择
+  var lang = ok.indexOf(q)>=0 ? q : (ok.indexOf(s)>=0 ? s : 'en');<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -12,9 +13,8 @@
   var ok=['zh','en','ja'];
   var q=new URLSearchParams(location.search).get('lang');
   var s=null; try{ s=localStorage.getItem('lang'); }catch(e){}
-  var n=(navigator.language||'en').toLowerCase();
-  var auto = n.indexOf('zh')===0 ? 'zh' : n.indexOf('ja')===0 ? 'ja' : 'en';
-  var lang = ok.indexOf(q)>=0 ? q : (ok.indexOf(s)>=0 ? s : auto);
+  // 默认英文；?lang= 参数优先，其次沿用上次的选择
+  var lang = ok.indexOf(q)>=0 ? q : (ok.indexOf(s)>=0 ? s : 'en');
   var d=document.documentElement;
   d.setAttribute('data-lang', lang);
   d.setAttribute('lang', {zh:'zh-CN', en:'en', ja:'ja'}[lang]);
@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css" rel="stylesheet">
-<link href="/css/style.css?v=11" rel="stylesheet">
+<link href="/css/style.css?v=12" rel="stylesheet">
 </head>
 <body>
 
@@ -35,8 +35,8 @@
 <!-- ============ 语言切换 ============ -->
 <nav id="langswitch" aria-label="Language">
   <span class="pill" aria-hidden="true"></span>
-  <button type="button" data-set="zh" title="中文" aria-label="中文"><span class="g">中</span></button>
   <button type="button" data-set="en" title="English" aria-label="English"><span class="g">A</span></button>
+  <button type="button" data-set="zh" title="中文" aria-label="中文"><span class="g">中</span></button>
   <button type="button" data-set="ja" title="日本語" aria-label="日本語"><span class="g">あ</span></button>
 </nav>
 

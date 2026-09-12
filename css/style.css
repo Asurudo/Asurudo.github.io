@@ -149,10 +149,16 @@ html[data-lang="ja"] [data-lang]:not([data-lang="ja"]){display:none !important}
 body{position:relative}
 
 #langswitch{
-  position:absolute; top:22px; right:24px; z-index:5;
+  position:fixed; bottom:26px; right:26px; z-index:50;
   display:flex; padding:3px;
-  border:1px solid var(--line); border-radius:999px; background:#fff;
-  box-shadow:0 1px 4px rgba(0,0,0,.05);
+  border:1px solid var(--line); border-radius:999px;
+  background:rgba(255,255,255,.92); backdrop-filter:blur(8px);
+  box-shadow:0 4px 16px rgba(0,0,0,.10), 0 1px 3px rgba(0,0,0,.06);
+  transition:box-shadow .25s, transform .25s;
+}
+#langswitch:hover{
+  box-shadow:0 6px 22px rgba(0,0,0,.14), 0 1px 3px rgba(0,0,0,.06);
+  transform:translateY(-1px);
 }
 
 /* 滑块：与顶部条共用同一套呼吸色 */
@@ -200,9 +206,8 @@ body{position:relative}
 }
 
 @media (max-width:800px){
-  #langswitch{top:16px;right:16px}
+  #langswitch{bottom:18px;right:18px}
   #langswitch button{width:32px;height:28px}
-  #hero{padding-top:58px}
 }
 
 /* ---------- 姓名：中日字形与振り仮名 ---------- */
