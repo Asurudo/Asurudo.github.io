@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css" rel="stylesheet">
-<link href="/css/style.css?v=21" rel="stylesheet">
+<link href="/css/style.css?v=22" rel="stylesheet">
 </head>
 <body>
 
@@ -148,29 +148,23 @@
 
       <div class="mainitem" id="publications">
         <div class="mainheader">
-          <span data-lang="zh">论文</span>
           <span data-lang="en">Publications</span>
-          <span data-lang="ja">業績</span>
+          <span data-lang="zh">论文</span>
+          <span data-lang="ja">発表</span>
         </div>
 
+        <!-- 论文标题保持英文原题，不随语言切换 -->
         <div class="pub">
-          <div class="pubimagesection"><div class="thumb-placeholder">thumbnail</div></div>
+          <div class="pubimagesection">
+            <!-- 换成配图：<img src="/img/sga2025.png" alt=""/> -->
+            <div class="thumb-placeholder">thumbnail</div>
+          </div>
           <div class="pubtextsection">
-            <div class="pubtitle tbd">
-              <span data-lang="zh">论文标题 TBD</span>
-              <span data-lang="en">Paper title TBD</span>
-              <span data-lang="ja">論文タイトル TBD</span>
+            <div class="pubtitle">
+              <a href="https://doi.org/10.1145/3757376.3771384" target="_blank" rel="noopener">Double/Triple-Axis Moments for Real-time Area Light Shading</a>
             </div>
-            <div class="pubauthors tbd">
-              <span data-lang="zh">作者列表 TBD</span>
-              <span data-lang="en">Author list TBD</span>
-              <span data-lang="ja">著者 TBD</span>
-            </div>
-            <div class="pubvenue tbd">
-              <span data-lang="zh">会议 / 期刊，年份 TBD</span>
-              <span data-lang="en">Venue, Year TBD</span>
-              <span data-lang="ja">学会誌・年 TBD</span>
-            </div>
+            <div class="pubauthors"><span class="self">Mingrui Xu</span>, Kei Iwasaki</div>
+            <div class="pubvenue">SIGGRAPH Asia 2025 Technical Communications, pp.&nbsp;21:1&ndash;21:4</div>
           </div>
         </div>
 

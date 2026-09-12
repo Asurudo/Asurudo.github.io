@@ -272,3 +272,8 @@ html[data-lang="ja"] #hero h1{line-height:1.5;margin-top:-6px}
 }
 
 .affil a{font-size:inherit;font-weight:inherit}
+
+/* ---------- 论文条目 ---------- */
+.pubtitle a{color:inherit}
+.pubtitle a:hover{color:var(--accent-dk);text-decoration:none}
+.pubauthors .self{font-weight:600;color:var(--fg)}   /* 本人加粗，学术页惯例 */
