@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css" rel="stylesheet">
-<link href="/css/style.css?v=9" rel="stylesheet">
+<link href="/css/style.css?v=10" rel="stylesheet">
 </head>
 <body>
 
@@ -44,7 +44,11 @@
 
   <!-- ============ Hero ============ -->
   <div id="hero">
-    <h1>Mingrui Xu</h1>
+    <h1>
+      <span data-lang="zh">徐明锐</span>
+      <span data-lang="en">Mingrui Xu</span>
+      <span data-lang="ja"><ruby>徐<rt>ジョ</rt>明鋭<rt>メイエイ</rt></ruby></span>
+    </h1>
     <p class="tagline">
       <span data-lang="zh" class="tbd">TBD —— 一句话定位，比如「实时渲染工程师」</span>
       <span data-lang="en" class="tbd">TBD — one line, e.g. “Graphics / Rendering Engineer”</span>
@@ -178,6 +182,7 @@
   var nav=document.getElementById('langswitch');
   var pill=nav.querySelector('.pill');
   var names={zh:'zh-CN', en:'en', ja:'ja'};
+  var titles={zh:'徐明锐', en:'Mingrui Xu', ja:'徐明鋭'};
 
   function movePill(){
     var b=nav.querySelector('button.on');
@@ -191,6 +196,7 @@
     var d=document.documentElement;
     d.setAttribute('data-lang', lang);
     d.setAttribute('lang', names[lang]);
+    document.title = titles[lang];
     nav.querySelectorAll('button').forEach(function(b){
       var on = b.dataset.set===lang;
       b.classList.toggle('on', on);

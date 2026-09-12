@@ -204,3 +204,22 @@ body{position:relative}
   #langswitch button{width:32px;height:28px}
   #hero{padding-top:58px}
 }
+
+/* ---------- 姓名：中日字形与振り仮名 ---------- */
+#hero h1 [data-lang="zh"],
+#hero h1 [data-lang="ja"]{
+  font-family:"LXGW WenKai",var(--serif);
+  letter-spacing:.08em;
+}
+#hero h1 ruby{
+  ruby-position:over;
+  ruby-align:center;
+}
+#hero h1 rt{
+  font-family:"LXGW WenKai",var(--sans);
+  font-size:.24em; font-weight:400; line-height:1.4;
+  letter-spacing:.14em; color:var(--muted);
+  text-align:center;
+}
+/* ruby 的注音要占上方空间，给标题留出行高 */
+html[data-lang="ja"] #hero h1{line-height:1.5;margin-top:-6px}
