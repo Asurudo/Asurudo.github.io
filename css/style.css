@@ -231,3 +231,13 @@ html[data-lang="ja"] #hero h1{line-height:1.5;margin-top:-6px}
 
 /* 日文姓名：姓与名之间留出间隔 */
 #hero h1 ruby + ruby{margin-left:.34em}
+
+/* ---------- 所属：双身份分组 ---------- */
+.affil{margin-bottom:15px}
+.affil:last-child{margin-bottom:0}
+.affil .role{
+  font-family:var(--serif); font-size:14.5px; font-weight:500;
+  color:var(--accent-dk); margin-bottom:3px; letter-spacing:.01em;
+}
+.sidebaritem .affil div{font-size:13.5px;line-height:1.5;color:var(--muted)}
+.sidebaritem .affil a{font-size:13.5px}
