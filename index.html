@@ -1,27 +1,54 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mingrui Xu</title>
 <meta name="theme-color" content="#39c5bb">
+
+<!-- 在渲染前定好语言，避免闪烁 -->
+<script>
+(function(){
+  var ok=['zh','en','ja'];
+  var q=new URLSearchParams(location.search).get('lang');
+  var s=null; try{ s=localStorage.getItem('lang'); }catch(e){}
+  var n=(navigator.language||'en').toLowerCase();
+  var auto = n.indexOf('zh')===0 ? 'zh' : n.indexOf('ja')===0 ? 'ja' : 'en';
+  var lang = ok.indexOf(q)>=0 ? q : (ok.indexOf(s)>=0 ? s : auto);
+  var d=document.documentElement;
+  d.setAttribute('data-lang', lang);
+  d.setAttribute('lang', {zh:'zh-CN', en:'en', ja:'ja'}[lang]);
+})();
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css" rel="stylesheet">
-<link href="/css/style.css?v=4" rel="stylesheet">
+<link href="/css/style.css?v=5" rel="stylesheet">
 </head>
 <body>
 
 <div id="topbar"></div>
+
+<!-- ============ 语言切换 ============ -->
+<nav id="langswitch" aria-label="Language">
+  <button type="button" data-set="zh" lang="zh-CN">中文</button>
+  <button type="button" data-set="en" lang="en">EN</button>
+  <button type="button" data-set="ja" lang="ja">日本語</button>
+</nav>
 
 <div class="container">
 
   <!-- ============ Hero ============ -->
   <div id="hero">
     <h1>Mingrui Xu</h1>
-    <p class="tagline">TBD —— 一句话定位，比如 Graphics / Rendering Engineer</p>
+    <p class="tagline">
+      <span data-lang="zh" class="tbd">TBD —— 一句话定位，比如「实时渲染工程师」</span>
+      <span data-lang="en" class="tbd">TBD — one line, e.g. “Graphics / Rendering Engineer”</span>
+      <span data-lang="ja" class="tbd">TBD —— 一行の肩書き、例「リアルタイムレンダリング エンジニア」</span>
+    </p>
     <div class="rule"></div>
   </div>
 
@@ -36,12 +63,22 @@
       </div>
 
       <div class="sidebaritem">
-        <div class="sidebarheader">Affiliations</div>
-        <div class="tbd">TBD</div>
+        <div class="sidebarheader">
+          <span data-lang="zh">所属</span>
+          <span data-lang="en">Affiliations</span>
+          <span data-lang="ja">所属</span>
+        </div>
+        <div data-lang="zh" class="tbd">TBD</div>
+        <div data-lang="en" class="tbd">TBD</div>
+        <div data-lang="ja" class="tbd">TBD</div>
       </div>
 
       <div class="sidebaritem">
-        <div class="sidebarheader">Links</div>
+        <div class="sidebarheader">
+          <span data-lang="zh">链接</span>
+          <span data-lang="en">Links</span>
+          <span data-lang="ja">リンク</span>
+        </div>
         <div><a href="https://github.com/Asurudo" target="_blank" rel="noopener">GitHub</a></div>
         <div><a href="https://asurudo.top/" target="_blank" rel="noopener">虹の橋</a></div>
         <div><a href="mailto:asurudojyo@gmail.com">Email</a></div>
@@ -53,41 +90,66 @@
     <div class="maincontent">
 
       <div class="mainitem" id="about">
-        <div class="mainheader">About</div>
-        <p class="tbd">TBD —— 一段自我介绍：你是谁、在哪、做什么方向、教育背景。</p>
+        <div class="mainheader">
+          <span data-lang="zh">关于</span>
+          <span data-lang="en">About</span>
+          <span data-lang="ja">プロフィール</span>
+        </div>
+        <p data-lang="zh" class="tbd">TBD —— 一段自我介绍：你是谁、在哪、做什么方向、教育背景。</p>
+        <p data-lang="en" class="tbd">TBD — a short bio: who you are, where you are, your research/work direction, and your education.</p>
+        <p data-lang="ja" class="tbd">TBD —— 自己紹介：所属、研究・業務の方向性、学歴など。</p>
       </div>
 
       <div class="mainitem" id="publications">
-        <div class="mainheader">Publications</div>
-
-        <div class="pub">
-          <div class="pubimagesection"><div class="thumb-placeholder">thumbnail</div></div>
-          <div class="pubtextsection">
-            <div class="pubtitle tbd">论文标题 TBD</div>
-            <div class="pubauthors tbd">作者列表 TBD</div>
-            <div class="pubvenue tbd">会议 / 期刊，年份 TBD</div>
-          </div>
+        <div class="mainheader">
+          <span data-lang="zh">论文</span>
+          <span data-lang="en">Publications</span>
+          <span data-lang="ja">業績</span>
         </div>
 
         <div class="pub">
           <div class="pubimagesection"><div class="thumb-placeholder">thumbnail</div></div>
           <div class="pubtextsection">
-            <div class="pubtitle tbd">论文标题 TBD</div>
-            <div class="pubauthors tbd">作者列表 TBD</div>
-            <div class="pubvenue tbd">会议 / 期刊，年份 TBD</div>
+            <div class="pubtitle tbd">
+              <span data-lang="zh">论文标题 TBD</span>
+              <span data-lang="en">Paper title TBD</span>
+              <span data-lang="ja">論文タイトル TBD</span>
+            </div>
+            <div class="pubauthors tbd">
+              <span data-lang="zh">作者列表 TBD</span>
+              <span data-lang="en">Author list TBD</span>
+              <span data-lang="ja">著者 TBD</span>
+            </div>
+            <div class="pubvenue tbd">
+              <span data-lang="zh">会议 / 期刊，年份 TBD</span>
+              <span data-lang="en">Venue, Year TBD</span>
+              <span data-lang="ja">学会誌・年 TBD</span>
+            </div>
           </div>
         </div>
 
       </div>
 
       <div class="mainitem" id="projects">
-        <div class="mainheader">Projects</div>
+        <div class="mainheader">
+          <span data-lang="zh">项目</span>
+          <span data-lang="en">Projects</span>
+          <span data-lang="ja">プロジェクト</span>
+        </div>
 
         <div class="project">
           <div class="projimagesection"><div class="thumb-placeholder">thumbnail</div></div>
           <div class="projtextsection">
-            <div class="projtitle tbd">项目名 TBD</div>
-            <div class="projintro tbd">一两句话介绍：做了什么、用了什么技术、结果如何。</div>
+            <div class="projtitle tbd">
+              <span data-lang="zh">项目名 TBD</span>
+              <span data-lang="en">Project name TBD</span>
+              <span data-lang="ja">プロジェクト名 TBD</span>
+            </div>
+            <div class="projintro tbd">
+              <span data-lang="zh">一两句话：做了什么、用了什么技术、结果如何。</span>
+              <span data-lang="en">One or two sentences: what you built, the tech, and the result.</span>
+              <span data-lang="ja">一、二文で：何を作り、どの技術を使い、どんな成果が出たか。</span>
+            </div>
           </div>
         </div>
 
@@ -99,12 +161,42 @@
 
   <!-- ============ 页脚 ============ -->
   <footer>
-    <div class="fheader">联系方式</div>
+    <div class="fheader">
+      <span data-lang="zh">联系方式</span>
+      <span data-lang="en">Contact</span>
+      <span data-lang="ja">連絡先</span>
+    </div>
     <div><a href="mailto:asurudojyo@gmail.com">asurudojyo@gmail.com</a></div>
-    <div class="copyright">Copyright © 2026 Asurudo Jyo. All rights reserved.</div>
+    <div class="copyright">Copyright © 2026 Mingrui Xu. All rights reserved.</div>
   </footer>
 
 </div>
+
+<script>
+(function(){
+  var nav=document.getElementById('langswitch');
+  var names={zh:'zh-CN', en:'en', ja:'ja'};
+  function apply(lang){
+    var d=document.documentElement;
+    d.setAttribute('data-lang', lang);
+    d.setAttribute('lang', names[lang]);
+    nav.querySelectorAll('button').forEach(function(b){
+      var on = b.dataset.set===lang;
+      b.classList.toggle('on', on);
+      b.setAttribute('aria-current', on ? 'true' : 'false');
+    });
+    try{ localStorage.setItem('lang', lang); }catch(e){}
+    var u=new URL(location.href);
+    u.searchParams.set('lang', lang);
+    history.replaceState(null,'',u);
+  }
+  nav.addEventListener('click', function(e){
+    var b=e.target.closest('button[data-set]');
+    if(b) apply(b.dataset.set);
+  });
+  apply(document.documentElement.getAttribute('data-lang') || 'en');
+})();
+</script>
 
 </body>
 </html>
