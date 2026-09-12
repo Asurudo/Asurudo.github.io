@@ -124,9 +124,11 @@ footer .copyright{margin-top:14px;font-size:13px;color:#9a9a9a}
 @media (max-width:800px){
   #hero{padding:34px 0 22px}
   #hero h1{font-size:31px}
-  .row{flex-direction:column;gap:28px;padding-top:26px}
-  .sidebar{flex:none}
-  #headshot{max-width:200px;margin:0 auto}
+  /* 手机端退回普通文档流：column 方向的 flex-basis 指高度，容易算错 */
+  .row{display:block;padding-top:26px}
+  .sidebar,.maincontent{width:auto;flex:none}
+  .sidebar{margin-bottom:30px}
+  #headshot{max-width:200px;margin:0 auto 26px}
   .pub,.project{gap:14px}
   .pubimagesection,.projimagesection{flex:0 0 110px}
 }
