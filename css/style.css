@@ -51,7 +51,7 @@ a:hover{color:var(--accent);text-decoration:underline}
 #hero h1{
   font-family:var(--serif);
   font-size:52px; font-weight:400; font-variation-settings:"opsz" 60;
-  margin:0 0 12px; letter-spacing:-.015em; color:#22262b; line-height:1.15;
+  margin:0 0 20px; letter-spacing:-.015em; color:#22262b; line-height:1.15;
 }
 #hero .tagline{
   font-size:15px; color:var(--muted); margin:0 0 20px;
