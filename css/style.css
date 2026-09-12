@@ -233,17 +233,24 @@ html[data-lang="ja"] #hero h1{line-height:1.5;margin-top:-6px}
 #hero h1 ruby + ruby{margin-left:.34em}
 
 /* ---------- 所属：双身份分组 ---------- */
-.affil{margin-bottom:15px}
+.affil{margin-bottom:20px}
 .affil:last-child{margin-bottom:0}
+
 .affil .role{
   font-family:var(--serif); font-size:14.5px; font-weight:500;
-  color:var(--accent-dk); margin-bottom:3px; letter-spacing:.01em;
+  color:var(--accent-dk); margin-bottom:6px; letter-spacing:.01em;
+  padding-left:0; text-indent:0;
 }
-/* 层级：角色(青衬线) > 机构(深) > 下属单位(灰) > 实验室(链接) */
-.sidebaritem .affil div{
-  font-size:13.5px; line-height:1.45; color:var(--muted);
-  margin-bottom:4px;
+
+/* 关键：条目内行距收紧、条目间距拉开，让邻近性正确表达归属
+   13.5 × 1.28 = 17.3px → 条目内行距 3.8px；条目间距 3.8 + 10 = 13.8px（约 3.6 倍）
+   再加悬挂缩进，换行的续行向右让 10px，一眼能认出是上一条的延续 */
+.affil div:not(.role){
+  font-size:13.5px; line-height:1.28; color:var(--muted);
+  margin-bottom:10px;
+  padding-left:10px; text-indent:-10px;
 }
-.sidebaritem .affil div:last-child{margin-bottom:0}
+.affil div:not(.role):last-child{margin-bottom:0}
+
 .affil .role + div{color:var(--fg); font-weight:500}
-.sidebaritem .affil a{font-size:13.5px}
+.affil a{font-size:13.5px}
