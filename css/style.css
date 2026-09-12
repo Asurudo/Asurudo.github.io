@@ -1,23 +1,24 @@
 /* ==========================================================
-   Asurudo — 学术主页骨架 × asurudo.top 视觉语言
-   强调色 #39c5bb / 衬线标题 / 居中 hero
+   Mingrui Xu — 学术主页骨架 × asurudo.top 视觉语言
+   字体：Newsreader（标题）/ IBM Plex Sans（正文）/ 霞鹜文楷（中日文）
    ========================================================== */
 :root{
-  --accent:#39c5bb;          /* 签名色 */
+  --accent:#39c5bb;
   --accent-dk:#2aa79e;
-  --fg:#333;
-  --muted:#767676;
+  --fg:#2f3338;
+  --muted:#7a828a;
   --line:#e7e7e7;
   --ph:#f0f3f4;
   --phfg:#b6bfc2;
-  --serif:"Times New Roman",Georgia,"Songti SC","SimSun",serif;
-  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Roboto,sans-serif;
+  --serif:"Newsreader","LXGW WenKai",Georgia,"Songti SC",serif;
+  --sans:"IBM Plex Sans","LXGW WenKai",-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",sans-serif;
 }
 *{box-sizing:border-box}
 body{
   margin:0; color:var(--fg); background:#fff;
-  font-family:var(--sans); font-size:15px; line-height:1.7;
-  -webkit-font-smoothing:antialiased;
+  font-family:var(--sans); font-size:15.5px; line-height:1.72;
+  font-optical-sizing:auto;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
 }
 a{color:var(--accent-dk);text-decoration:none}
 a:hover{color:var(--accent);text-decoration:underline}
@@ -40,58 +41,61 @@ a:hover{color:var(--accent);text-decoration:underline}
    90%{background-color:#55d1d0}
   100%{background-color:#39c5bb}
 }
-/* 尊重系统的"减少动态效果"设置 */
-@media (prefers-reduced-motion:reduce){
-  #topbar{animation:none}
-}
+@media (prefers-reduced-motion:reduce){ #topbar{animation:none} }
 
 .container{max-width:1000px;margin:0 auto;padding:0 22px}
 
 /* ---------- Hero ---------- */
-#hero{text-align:center;padding:46px 0 30px}
+#hero{text-align:center;padding:52px 0 32px}
 #hero h1{
-  font-family:var(--serif); font-size:40px; font-weight:600;
-  margin:0 0 10px; letter-spacing:.5px; color:#2b2b2b;
+  font-family:var(--serif);
+  font-size:52px; font-weight:400; font-variation-settings:"opsz" 60;
+  margin:0 0 12px; letter-spacing:-.015em; color:#22262b; line-height:1.15;
 }
-#hero h1 .p{color:var(--accent)}          /* の 之类的连接字符 */
-#hero .tagline{font-size:15px;color:var(--muted);margin:0 0 18px}
-#hero .rule{width:60px;height:4px;background:var(--accent);margin:0 auto;border-radius:2px}
+#hero .tagline{
+  font-size:15px; color:var(--muted); margin:0 0 20px;
+  letter-spacing:.01em;
+}
+#hero .rule{width:64px;height:3px;background:var(--accent);margin:0 auto;border-radius:2px}
 
 /* ---------- 栅格 ---------- */
-.row{display:flex;flex-wrap:wrap;gap:40px;padding-top:34px}
+.row{display:flex;flex-wrap:wrap;gap:44px;padding-top:34px}
 .sidebar{flex:0 0 240px}
 .maincontent{flex:1;min-width:0}
 
 /* ---------- 侧边栏 ---------- */
-.sidebaritem{margin-bottom:26px}
+.sidebaritem{margin-bottom:28px}
 .sidebarheader{
-  font-family:var(--serif); font-size:17px; font-weight:600; color:#2b2b2b;
-  margin-bottom:8px; padding-bottom:6px;
+  font-family:var(--serif); font-size:19px; font-weight:500;
+  font-variation-settings:"opsz" 20;
+  color:#22262b; margin-bottom:9px; padding-bottom:6px;
   border-bottom:2px solid var(--accent);
 }
-.sidebaritem div{font-size:14px;color:var(--muted)}
+.sidebaritem div{font-size:14.5px;color:var(--muted)}
 #headshot img{width:100%;border-radius:4px;display:block}
 .photo-placeholder{
   width:100%;aspect-ratio:1/1.1;background:var(--ph);border-radius:4px;
   display:flex;align-items:center;justify-content:center;
-  color:var(--phfg);font-size:13px;letter-spacing:1px;
+  color:var(--phfg);font-size:13px;letter-spacing:1.5px;
 }
 
 /* ---------- 主体 ---------- */
-.mainitem{margin-bottom:42px}
+.mainitem{margin-bottom:44px}
 .mainheader{
-  font-family:var(--serif); font-size:26px; font-weight:600; color:#2b2b2b;
-  margin-bottom:16px; padding-bottom:8px;
+  font-family:var(--serif); font-size:30px; font-weight:400;
+  font-variation-settings:"opsz" 36;
+  color:#22262b; margin-bottom:18px; padding-bottom:9px;
   border-bottom:1px solid var(--line); position:relative;
+  letter-spacing:-.01em;
 }
-.mainheader::after{            /* 标题下的短强调线 */
+.mainheader::after{
   content:""; position:absolute; left:0; bottom:-1px;
-  width:52px; height:3px; background:var(--accent);
+  width:56px; height:3px; background:var(--accent);
 }
 .mainitem p{margin:0}
 
 /* ---------- 论文 / 项目 ---------- */
-.pub,.project{display:flex;gap:20px;margin-bottom:26px;align-items:flex-start}
+.pub,.project{display:flex;gap:22px;margin-bottom:28px;align-items:flex-start}
 .pubimagesection,.projimagesection{flex:0 0 180px}
 .pubimagesection img,.projimagesection img{width:100%;border-radius:4px;display:block}
 .thumb-placeholder{
@@ -101,29 +105,32 @@ a:hover{color:var(--accent);text-decoration:underline}
 }
 .pubtextsection,.projtextsection{flex:1;min-width:0}
 .pubtitle,.projtitle{
-  font-family:var(--serif); font-weight:600; font-size:18px;
-  color:#2b2b2b; margin-bottom:4px;
+  font-family:var(--serif); font-size:20px; font-weight:500;
+  font-variation-settings:"opsz" 18;
+  color:#22262b; margin-bottom:5px; line-height:1.35;
 }
-.pubauthors{font-size:14px;color:#444}
-.pubvenue{font-size:14px;color:var(--muted);font-style:italic}
-.projintro{font-size:14px;color:#444}
+.pubauthors{font-size:14.5px;color:#4a5058}
+.pubvenue{font-size:14.5px;color:var(--muted);font-style:italic}
+.projintro{font-size:14.5px;color:#4a5058}
 .tbd{color:#b5b5b5;font-style:italic}
 
 /* ---------- 页脚 ---------- */
 footer{
-  margin-top:50px; border-top:4px solid var(--line);
-  padding:26px 0 40px; text-align:center; font-size:14px; color:var(--muted);
+  margin-top:54px; border-top:4px solid var(--line);
+  padding:28px 0 44px; text-align:center; font-size:14.5px; color:var(--muted);
 }
 footer .fheader{
-  font-family:var(--serif); font-size:16px; font-weight:600;
-  color:#2b2b2b; margin-bottom:6px;
+  font-family:var(--serif); font-size:19px; font-weight:500;
+  color:#22262b; margin-bottom:7px;
 }
-footer .copyright{margin-top:14px;font-size:13px;color:#9a9a9a}
+footer .copyright{margin-top:15px;font-size:13px;color:#9a9a9a}
 
 /* ---------- 移动端 ---------- */
 @media (max-width:800px){
-  #hero{padding:34px 0 22px}
-  #hero h1{font-size:31px}
+  #hero{padding:36px 0 24px}
+  #hero h1{font-size:38px;font-variation-settings:"opsz" 40}
+  .mainheader{font-size:26px}
+  .pubtitle,.projtitle{font-size:18px}
   /* 手机端退回普通文档流：column 方向的 flex-basis 指高度，容易算错 */
   .row{display:block;padding-top:26px}
   .sidebar,.maincontent{width:auto;flex:none}
