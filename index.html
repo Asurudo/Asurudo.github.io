@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css" rel="stylesheet">
-<link href="/css/style.css?v=8" rel="stylesheet">
+<link href="/css/style.css?v=9" rel="stylesheet">
 </head>
 <body>
 
@@ -210,10 +210,17 @@
 
   apply(document.documentElement.getAttribute('data-lang') || 'en');
 
-  // 首次定位完成后才开启过渡，避免滑块从左边飞进来
-  requestAnimationFrame(function(){ nav.classList.add('ready'); });
-  // 字体加载完字宽会变，重新量一次
+
+  // 首次定位完成后才开启过渡，避免滑块从左边飞进来。
+  // rAF 在后台标签页不触发，补一个 setTimeout 兜底。
+  var armed=false;
+  function arm(){ if(armed) return; armed=true; nav.classList.add('ready'); }
+  requestAnimationFrame(arm);
+  setTimeout(arm,120);
+
+  // 字体加载完、断点切换、窗口缩放都会改变按钮尺寸，让滑块持续跟随
   if(document.fonts && document.fonts.ready) document.fonts.ready.then(movePill);
+  if(window.ResizeObserver) new ResizeObserver(movePill).observe(nav);
   addEventListener('resize', movePill);
 })();
 </script>
