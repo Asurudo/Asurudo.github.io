@@ -9,11 +9,11 @@
 <!-- 在渲染前定好语言，避免闪烁 -->
 <script>
 (function(){
+  // 裸链接一律英文；只有 ?lang=zh / ?lang=ja 才切换。
+  // 不记忆上次选择 —— 英文永远是第一页。
   var ok=['zh','en','ja'];
   var q=new URLSearchParams(location.search).get('lang');
-  var s=null; try{ s=localStorage.getItem('lang'); }catch(e){}
-  // 默认英文；?lang= 参数优先，其次沿用上次的选择
-  var lang = ok.indexOf(q)>=0 ? q : (ok.indexOf(s)>=0 ? s : 'en');
+  var lang = ok.indexOf(q)>=0 ? q : 'en';
   var d=document.documentElement;
   d.setAttribute('data-lang', lang);
   d.setAttribute('lang', {zh:'zh-CN', en:'en', ja:'ja'}[lang]);
@@ -202,7 +202,6 @@
       b.setAttribute('aria-current', on ? 'true' : 'false');
     });
     movePill();
-    try{ localStorage.setItem('lang', lang); }catch(e){}
     var u=new URL(location.href);
     u.searchParams.set('lang', lang);
     history.replaceState(null,'',u);
