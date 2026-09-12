@@ -22,8 +22,28 @@ body{
 a{color:var(--accent-dk);text-decoration:none}
 a:hover{color:var(--accent);text-decoration:underline}
 
-/* 顶部强调条 */
-#topbar{height:4px;background:var(--accent)}
+/* 顶部呼吸条 —— 取自 asurudo.top */
+#topbar{
+  height:5px; background:var(--accent);
+  animation:blink-rainbow-bg 20s linear infinite;
+}
+@keyframes blink-rainbow-bg{
+    0%{background-color:#39c5bb}
+   10%{background-color:#55d1d0}
+   20%{background-color:#47c8c0}
+   30%{background-color:#87e5cf}
+   40%{background-color:#ff629d}
+   50%{background-color:#ff1688}
+   60%{background-color:#ff629d}
+   70%{background-color:#87e5cf}
+   80%{background-color:#47c8c0}
+   90%{background-color:#55d1d0}
+  100%{background-color:#39c5bb}
+}
+/* 尊重系统的"减少动态效果"设置 */
+@media (prefers-reduced-motion:reduce){
+  #topbar{animation:none}
+}
 
 .container{max-width:1000px;margin:0 auto;padding:0 22px}
 
