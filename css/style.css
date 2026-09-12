@@ -239,5 +239,11 @@ html[data-lang="ja"] #hero h1{line-height:1.5;margin-top:-6px}
   font-family:var(--serif); font-size:14.5px; font-weight:500;
   color:var(--accent-dk); margin-bottom:3px; letter-spacing:.01em;
 }
-.sidebaritem .affil div{font-size:13.5px;line-height:1.5;color:var(--muted)}
+/* 层级：角色(青衬线) > 机构(深) > 下属单位(灰) > 实验室(链接) */
+.sidebaritem .affil div{
+  font-size:13.5px; line-height:1.45; color:var(--muted);
+  margin-bottom:4px;
+}
+.sidebaritem .affil div:last-child{margin-bottom:0}
+.affil .role + div{color:var(--fg); font-weight:500}
 .sidebaritem .affil a{font-size:13.5px}
