@@ -290,3 +290,13 @@ html[data-lang="ja"] #hero h1{line-height:1.5;margin-top:-6px}
 /* 论文配图：保持 16:9，悬停微亮提示可点击 */
 .pubimagesection img{height:auto;transition:filter .2s}
 .pubimagesection a:hover img{filter:brightness(1.08)}
+
+/* ---------- Links：单色图标 ---------- */
+.iconlinks{display:flex;gap:16px;align-items:center;padding-top:2px}
+.iconlinks a{color:#4a5058;display:inline-flex;line-height:0;transition:color .2s,transform .2s}
+.iconlinks a:hover{color:#111;transform:translateY(-1px);text-decoration:none}
+.iconlinks svg{width:22px;height:22px;display:block}
+.ic-blog path{transition:stroke .25s}
+.ic-blog:hover path:nth-of-type(1){stroke:#ff1688}   /* 外：呼吸灯的粉 */
+.ic-blog:hover path:nth-of-type(2){stroke:#f5b800}   /* 中：黄 */
+.ic-blog:hover path:nth-of-type(3){stroke:#39c5bb}   /* 内：初音青 */
