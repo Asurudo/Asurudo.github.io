@@ -277,3 +277,10 @@ html[data-lang="ja"] #hero h1{line-height:1.5;margin-top:-6px}
 .pubtitle a{color:inherit}
 .pubtitle a:hover{color:var(--accent-dk);text-decoration:none}
 .pubauthors .self{font-weight:600;color:var(--fg)}   /* 本人加粗，学术页惯例 */
+
+/* ---------- 签名（头像位） ---------- */
+#headshot img{
+  width:100%; height:auto; display:block; border-radius:0;
+  /* 原图是米色纸底，用 multiply 让纸底与白色页面融合，只留墨迹 */
+  mix-blend-mode:multiply;
+}

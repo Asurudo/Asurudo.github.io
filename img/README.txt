@@ -1,2 +1,2 @@
-me.jpg 放这里（证件照）
-缩略图放这里，比如 pub1.png / proj1.png
+签名图 signature.jpg（侧栏头像位）
+论文/项目缩略图放这里，如 sga2025.png
