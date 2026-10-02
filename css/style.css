@@ -286,3 +286,7 @@ html[data-lang="ja"] #hero h1{line-height:1.5;margin-top:-6px}
   filter:brightness(1.12) contrast(1.06);
   mix-blend-mode:multiply;
 }
+
+/* 论文配图：保持 16:9，悬停微亮提示可点击 */
+.pubimagesection img{height:auto;transition:filter .2s}
+.pubimagesection a:hover img{filter:brightness(1.08)}
