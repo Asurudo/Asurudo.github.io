@@ -281,6 +281,8 @@ html[data-lang="ja"] #hero h1{line-height:1.5;margin-top:-6px}
 /* ---------- 签名（头像位） ---------- */
 #headshot img{
   width:100%; height:auto; display:block; border-radius:0;
-  /* 原图是米色纸底，用 multiply 让纸底与白色页面融合，只留墨迹 */
+  /* 原图是米色纸底(约 #f7f4e9)。brightness(1.12) 把三个通道都顶到 255 变纯白，
+     墨迹(近黑)提亮后仍是近黑；再叠 multiply 兜住残余的灰白，彻底融进页面 */
+  filter:brightness(1.12) contrast(1.06);
   mix-blend-mode:multiply;
 }
