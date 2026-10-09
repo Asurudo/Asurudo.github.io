@@ -307,3 +307,12 @@ html[data-lang="ja"] #hero h1{line-height:1.5;margin-top:-6px}
   word-break:auto-phrase;
 }
 .pubauthors:lang(ja){font-family:"IBM Plex Sans","IBM Plex Sans JP",sans-serif}
+
+/* ---------- 页脚签名句 ---------- */
+footer .motto{
+  font-family:"Shippori Mincho","LXGW WenKai",serif; font-weight:500;
+  font-size:15px; letter-spacing:.18em; color:#8a9097;
+  margin-top:18px;
+}
+footer .motto span{color:var(--accent)}
+footer .motto + .copyright{margin-top:8px}
