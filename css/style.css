@@ -315,3 +315,6 @@ html[data-lang="ja"] #hero h1{line-height:1.5;margin-top:-6px}
   margin-top:14px;
 }
 #about .motto span{color:var(--accent)}
+/* 座右铭：各语言用各自合适的字体 */
+#about .motto:lang(en){font-family:"Newsreader",serif;font-style:italic;font-size:16.5px;letter-spacing:.01em}
+#about .motto:lang(zh){font-family:"LXGW WenKai",serif;letter-spacing:.12em}
