@@ -308,11 +308,10 @@ html[data-lang="ja"] #hero h1{line-height:1.5;margin-top:-6px}
 }
 .pubauthors:lang(ja){font-family:"IBM Plex Sans","IBM Plex Sans JP",sans-serif}
 
-/* ---------- 页脚签名句 ---------- */
-footer .motto{
+/* ---------- About 结尾：座右铭（日文原文，不加标签不翻译） ---------- */
+#about .motto{
   font-family:"Shippori Mincho","LXGW WenKai",serif; font-weight:500;
-  font-size:15px; letter-spacing:.18em; color:#8a9097;
-  margin-top:18px;
+  font-size:15.5px; letter-spacing:.16em; color:#6b7279;
+  margin-top:14px;
 }
-footer .motto span{color:var(--accent)}
-footer .motto + .copyright{margin-top:8px}
+#about .motto span{color:var(--accent)}
