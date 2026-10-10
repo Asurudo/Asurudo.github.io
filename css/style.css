@@ -456,3 +456,9 @@ html[data-lang="ja"] #hero h1{line-height:1.5;margin-top:-6px}
 @media (min-width:801px){
   .sidebaritem .sidebarheader{max-width:300px}
 }
+
+/* 栏目标题后的小字说明（如 Awards · Competitive Programming） */
+.mainheader .hsub{
+  font-family:var(--sans); font-size:15px; font-weight:400;
+  color:var(--muted); letter-spacing:.02em; margin-left:12px;
+}
