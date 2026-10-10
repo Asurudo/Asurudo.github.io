@@ -471,3 +471,19 @@ html[data-lang="ja"] #hero h1{line-height:1.5;margin-top:-6px}
   -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 0l2.35 4.76 5.25.77-3.8 3.7.9 5.23L8 11.99 3.3 14.46l.9-5.23-3.8-3.7 5.25-.77z'/%3E%3C/svg%3E") center/contain no-repeat;
           mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 0l2.35 4.76 5.25.77-3.8 3.7.9 5.23L8 11.99 3.3 14.46l.9-5.23-3.8-3.7 5.25-.77z'/%3E%3C/svg%3E") center/contain no-repeat;
 }
+
+/* ---------- 米色纸面 ----------
+   背景从纯白换成偏暖的米白；原本按白底调的线条、占位、标签一起换成暖色调。
+   签名用了 mix-blend-mode:multiply，纸底会自动融进米色背景。 */
+:root{
+  --bg:#f8f5ee;
+  --line:#e6e0d4;
+  --ph:#eee9de;
+  --phfg:#b3aa9a;
+}
+body{background:var(--bg)}
+#langswitch{background:rgba(248,245,238,.92);border-color:var(--line)}
+#langswitch button + button{border-left-color:transparent}
+#langswitch button:hover{background:rgba(57,197,187,.08)}
+.awards li,.edu li{border-bottom-color:#ece6da}
+.langitem .lcert span{background:#fbf9f4;border-color:#e2dbcd}
