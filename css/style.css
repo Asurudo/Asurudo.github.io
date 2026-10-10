@@ -462,3 +462,12 @@ html[data-lang="ja"] #hero h1{line-height:1.5;margin-top:-6px}
   font-family:var(--sans); font-size:15px; font-weight:400;
   color:var(--muted); letter-spacing:.02em; margin-left:12px;
 }
+
+/* 论文获奖标记：与 Awards 金奖同色 */
+.pubaward{font-size:14px;font-weight:600;color:#b8901e;margin-top:2px;display:flex;align-items:center;gap:5px}
+.pubaward::before{
+  content:""; width:13px; height:13px; flex:none;
+  background:currentColor;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 0l2.35 4.76 5.25.77-3.8 3.7.9 5.23L8 11.99 3.3 14.46l.9-5.23-3.8-3.7 5.25-.77z'/%3E%3C/svg%3E") center/contain no-repeat;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 0l2.35 4.76 5.25.77-3.8 3.7.9 5.23L8 11.99 3.3 14.46l.9-5.23-3.8-3.7 5.25-.77z'/%3E%3C/svg%3E") center/contain no-repeat;
+}
