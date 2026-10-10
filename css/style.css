@@ -61,8 +61,8 @@ a:hover{color:var(--accent);text-decoration:underline}
 
 /* ---------- 栅格 ---------- */
 .row{display:flex;flex-wrap:wrap;gap:44px;padding-top:34px}
-.sidebar{flex:0 0 240px}
-.maincontent{flex:1;min-width:0}
+.sidebar{flex:1 1 0;min-width:0}
+.maincontent{flex:1.618 1 0;min-width:0}   /* 侧栏 : 主栏 = 1 : φ */
 
 /* ---------- 侧边栏 ---------- */
 .sidebaritem{margin-bottom:28px}
