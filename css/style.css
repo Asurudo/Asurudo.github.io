@@ -401,3 +401,18 @@ html[data-lang="ja"] #hero h1{line-height:1.5;margin-top:-6px}
 
   .pubimagesection,.projimagesection{flex:0 0 200px}
 }
+
+/* ---------- 两栏统一 ----------
+   侧栏标题改用与主栏相同的样式：灰色细线 + 左端短青线（长度按字号比例 56 × 22/30 ≈ 41px）
+   签名裁掉了上下留白，宽屏下铺满整栏，底部横线与栏的左右边缘对齐 */
+.sidebaritem .sidebarheader{
+  border-bottom:1px solid var(--line); position:relative; padding-bottom:4px;
+}
+.sidebaritem .sidebarheader::after{
+  content:""; position:absolute; left:0; bottom:-1px;
+  width:41px; height:3px; background:var(--accent);
+}
+#headshot img{height:auto}
+@media (min-width:801px){
+  #headshot img{max-width:none;width:100%}
+}
