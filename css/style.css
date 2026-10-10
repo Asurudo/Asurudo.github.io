@@ -416,3 +416,26 @@ html[data-lang="ja"] #hero h1{line-height:1.5;margin-top:-6px}
 @media (min-width:801px){
   #headshot img{max-width:none;width:100%}
 }
+
+/* ---------- 回收一档（宽屏） ----------
+   签名不再铺满整栏，侧栏字号、图标各降一档 */
+@media (min-width:801px){
+  #headshot img{width:230px;max-width:100%}
+
+  .sidebaritem{margin-bottom:30px}
+  .sidebaritem .sidebarheader{font-size:20px;font-variation-settings:"opsz" 22;margin-bottom:11px}
+  .sidebaritem .sidebarheader::after{width:37px}
+
+  .affil{margin-bottom:16px}
+  .affil .role{font-size:15px}
+  .affil .role + div{font-size:14px}
+  .affil .role + div ~ div{font-size:13px}
+
+  .langitem{margin-bottom:11px}
+  .sidebaritem .langitem .lname{font-size:14px}
+  .sidebaritem .langitem .ldesc{font-size:13px}
+  .langitem .lcert span{font-size:11.5px;padding:3px 7px}
+
+  .iconlinks{gap:18px}
+  .iconlinks svg{width:24px;height:24px}
+}
