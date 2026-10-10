@@ -399,5 +399,5 @@ html[data-lang="ja"] #hero h1{line-height:1.5;margin-top:-6px}
   .iconlinks{gap:20px}
   .iconlinks svg{width:26px;height:26px}
 
-  .pubimagesection,.projimagesection{flex:0 0 210px}
+  .pubimagesection,.projimagesection{flex:0 0 200px}
 }
