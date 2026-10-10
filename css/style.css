@@ -370,3 +370,5 @@ html[data-lang="ja"] #hero h1{line-height:1.5;margin-top:-6px}
 @media (max-width:800px){
   .edu li{grid-template-columns:1fr;row-gap:1px}
 }
+/* 日文等不靠空格断行的语言：以单位为整体换行，避免把「課程」拆成两行 */
+.nw{white-space:nowrap}
