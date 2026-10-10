@@ -355,3 +355,18 @@ html[data-lang="ja"] #hero h1{line-height:1.5;margin-top:-6px}
 @media (min-width:900px){
   body{zoom:1.15}
 }
+
+/* ---------- 教育经历（与获奖同一套行式布局） ---------- */
+.edu{list-style:none;margin:0;padding:0}
+.edu li{
+  display:grid; grid-template-columns:132px 1fr; column-gap:16px;
+  align-items:baseline; padding:6px 0; font-size:14.5px; line-height:1.45;
+  border-bottom:1px solid #f1f1f1;
+}
+.edu li:last-child{border-bottom:0}
+.edu .date{color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.edu .what{color:#3a3f45}
+.edu .sub{display:block;font-size:13px;color:var(--muted);margin-top:1px}
+@media (max-width:800px){
+  .edu li{grid-template-columns:1fr;row-gap:1px}
+}
