@@ -439,3 +439,15 @@ html[data-lang="ja"] #hero h1{line-height:1.5;margin-top:-6px}
   .iconlinks{gap:18px}
   .iconlinks svg{width:24px;height:24px}
 }
+
+/* 侧栏字号再加一点（宽屏） */
+@media (min-width:801px){
+  .sidebaritem .sidebarheader{font-size:21px}
+  .sidebaritem .sidebarheader::after{width:39px}
+  .affil .role{font-size:16px}
+  .affil .role + div{font-size:15px}
+  .affil .role + div ~ div{font-size:14px}
+  .sidebaritem .langitem .lname{font-size:15px}
+  .sidebaritem .langitem .ldesc{font-size:14px}
+  .langitem .lcert span{font-size:12px}
+}
