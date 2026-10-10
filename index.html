@@ -28,7 +28,7 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+JP:wght@400;600&family=Shippori+Mincho:wght@500&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css" rel="stylesheet">
-<link href="/css/style.css?v=33" rel="stylesheet">
+<link href="/css/style.css?v=34" rel="stylesheet">
 </head>
 <body>
 
@@ -118,6 +118,32 @@
 
       <div class="sidebaritem">
         <div class="sidebarheader">
+          <span data-lang="en">Languages</span>
+          <span data-lang="zh">语言</span>
+          <span data-lang="ja">言語</span>
+        </div>
+
+        <div data-lang="en">
+          <div class="langitem"><div class="lname">Chinese</div><div class="ldesc">Native</div></div>
+          <div class="langitem"><div class="lname">Japanese</div><div class="ldesc">Fluent; used daily at work and in research</div><div class="lcert"><span>JLPT N1</span></div></div>
+          <div class="langitem"><div class="lname">English</div><div class="ldesc">Professional working proficiency</div><div class="lcert"><span>TOEIC L&amp;R 900</span><span>CET-6 526</span></div></div>
+        </div>
+
+        <div data-lang="zh">
+          <div class="langitem"><div class="lname">中文</div><div class="ldesc">母语</div></div>
+          <div class="langitem"><div class="lname">日语</div><div class="ldesc">流利，工作和研究中日常使用</div><div class="lcert"><span>JLPT N1</span></div></div>
+          <div class="langitem"><div class="lname">英语</div><div class="ldesc">可用于工作与学术交流</div><div class="lcert"><span>TOEIC L&amp;R 900</span><span>CET-6 526</span></div></div>
+        </div>
+
+        <div data-lang="ja">
+          <div class="langitem"><div class="lname">中国語</div><div class="ldesc">ネイティブ</div></div>
+          <div class="langitem"><div class="lname">日本語</div><div class="ldesc">流暢。研究・業務で日常的に使用</div><div class="lcert"><span>JLPT N1</span></div></div>
+          <div class="langitem"><div class="lname">英語</div><div class="ldesc">ビジネス・学術で使用可能</div><div class="lcert"><span>TOEIC L&amp;R 900</span><span>CET-6 526</span></div></div>
+        </div>
+      </div>
+
+      <div class="sidebaritem">
+        <div class="sidebarheader">
           <span data-lang="en">Links</span>
           <span data-lang="zh">链接</span>
           <span data-lang="ja">リンク</span>
@@ -185,21 +211,6 @@
 
       </div>
 
-      <div class="mainitem" id="awards">
-        <div class="mainheader">
-          <span data-lang="en">Awards</span>
-          <span data-lang="zh">获奖</span>
-          <span data-lang="ja">受賞歴</span>
-        </div>
-        <!-- 比赛名保持英文原名，不随语言切换 -->
-        <ul class="awards">
-          <li><span class="date">2021.07</span><span class="contest">The 2020 ICPC Asia Shenyang Regional Contest</span><span class="medal bronze">Bronze Medal</span></li>
-          <li><span class="date">2021.06</span><span class="contest">The 2021 ICPC China Shaanxi National Invitational Programming Contest</span><span class="medal bronze">Bronze Medal</span></li>
-          <li><span class="date">2021.06</span><span class="contest">The 15th Chinese Northeast Collegiate Programming Contest</span><span class="medal silver">Second Prize</span></li>
-          <li><span class="date">2020.10</span><span class="contest">The 1st China Liaoning Province Programming Contest</span><span class="medal gold">Gold Medal</span></li>
-        </ul>
-      </div>
-
       <div class="mainitem" id="projects">
         <div class="mainheader">
           <span data-lang="zh">项目</span>
@@ -223,6 +234,21 @@
           </div>
         </div>
 
+      </div>
+
+      <div class="mainitem" id="awards">
+        <div class="mainheader">
+          <span data-lang="en">Awards</span>
+          <span data-lang="zh">获奖</span>
+          <span data-lang="ja">受賞歴</span>
+        </div>
+        <!-- 比赛名保持英文原名，不随语言切换 -->
+        <ul class="awards">
+          <li><span class="date">2021.07</span><span class="contest">The 2020 ICPC Asia Shenyang Regional Contest</span><span class="medal bronze">Bronze Medal</span></li>
+          <li><span class="date">2021.06</span><span class="contest">The 2021 ICPC China Shaanxi National Invitational Programming Contest</span><span class="medal bronze">Bronze Medal</span></li>
+          <li><span class="date">2021.06</span><span class="contest">The 15th Chinese Northeast Collegiate Programming Contest</span><span class="medal silver">Second Prize</span></li>
+          <li><span class="date">2020.10</span><span class="contest">The 1st China Liaoning Province Programming Contest</span><span class="medal gold">Gold Medal</span></li>
+        </ul>
       </div>
 
     </div>
