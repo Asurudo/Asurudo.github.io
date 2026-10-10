@@ -374,3 +374,30 @@ html[data-lang="ja"] #hero h1{line-height:1.5;margin-top:-6px}
 .nw{white-space:nowrap}
 /* 黄金比例下侧栏变宽，签名保持原来的尺寸，不随侧栏放大 */
 #headshot img{max-width:250px}
+
+/* ---------- 黄金比例下的尺寸适配（仅宽屏） ----------
+   侧栏从 240px 变宽到约 390px，字号、图标、签名随之放大一档；
+   主栏论文配图也相应放大。手机端保持原尺寸。 */
+@media (min-width:801px){
+  #headshot img{max-width:310px}
+
+  .sidebaritem{margin-bottom:34px}
+  .sidebaritem .sidebarheader{font-size:22px;font-variation-settings:"opsz" 24;margin-bottom:12px}
+
+  .affil{margin-bottom:18px}
+  .affil .role{font-size:16.5px;margin-bottom:4px}
+  .affil div:not(.role){line-height:1.35;margin-bottom:3px}
+  .affil .role + div{font-size:15px}
+  .affil .role + div ~ div{font-size:13.8px}
+
+  .langitem{margin-bottom:13px}
+  .sidebaritem .langitem .lname{font-size:15px}
+  .sidebaritem .langitem .ldesc{font-size:13.8px}
+  .langitem .lcert{gap:5px;margin-top:5px}
+  .langitem .lcert span{font-size:12px;padding:4px 7px}
+
+  .iconlinks{gap:20px}
+  .iconlinks svg{width:26px;height:26px}
+
+  .pubimagesection,.projimagesection{flex:0 0 210px}
+}
